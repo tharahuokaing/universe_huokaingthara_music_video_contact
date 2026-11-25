@@ -158,4 +158,62 @@
                         </label>
                         <select id="mvTopicSelect">
                             <option value="Music Video Production & Visual Shoots">Music Video Production & Visual Shoots / ផលិតវីដេអូ</option>
-                            <option value="Artists, Songwriters
+                            <option value="Artists, Songwriters & Audio Collaborations">Artists, Songwriters & Audio Collaborations / សិល្បករ</option>
+                            <option value="Release Promotion, Marketing & Press">Release Promotion, Marketing & Press / ផ្សព្វផ្សាយ</option>
+                            <option value="General Music Video Inquiry">General Music Video Inquiry / សំណួរទូទៅ</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mvTrackRef">
+                            <span class="km">ឈ្មោះបទចម្រៀង ឬគម្រោង / Track or Project Title (Optional)</span>
+                            <span class="en">Track or Project Title (Optional)</span>
+                        </label>
+                        <input type="text" id="mvTrackRef" placeholder="e.g., Cyber Night / រាត្រីសាយប័រ">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mvMessageBox">
+                        <span class="km">ខ្លឹមសារសារ / Message *</span>
+                        <span class="en">Message *</span>
+                    </label>
+                    <textarea id="mvMessageBox" rows="4" required placeholder="Share your music video concept, artist details, or campaign inquiry..."></textarea>
+                </div>
+
+                <button type="submit" class="control-btn submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span class="km">ផ្ញើសារទំនាក់ទំនង</span> / <span class="en">Send Music Video Message</span>
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Receipt Modal -->
+    <div id="mvReceiptModal" class="modal-backdrop hidden">
+        <div class="modal-card">
+            <span class="modal-badge">MUSIC VIDEO INQUIRY LOGGED</span>
+            <h3>Music Video Contact Confirmation</h3>
+            <div class="modal-body" id="mvReceiptContent"></div>
+            <div class="modal-actions">
+                <button id="copyMvRefBtn" class="control-btn secondary-btn">
+                    <i class="fa-regular fa-copy"></i> Copy Ref
+                </button>
+                <button id="closeMvReceiptBtn" class="control-btn">
+                    <span class="km">បិទផ្ទាំង</span> / <span class="en">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 UNIVERSE HUOKAING THARA Group. All Rights Reserved. / រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="music.js"></script>
+    <script src="ultra_secure_mode.js"></script>
+</body>
+</html>
