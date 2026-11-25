@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const name = document.getElementById("mvFullName").value.trim();
             const contact = document.getElementById("mvContactInfo").value.trim();
             const topic = document.getElementById("mvTopicSelect").value;
-            const track = document.getElementById("trackTitle").value.trim() || "General";
+            const track = document.getElementById("mvTrackRef").value.trim() || "General";
             const msg = document.getElementById("mvMessageBox").value.trim();
             latestRef = "UHT-MV-" + Math.floor(100000 + Math.random() * 900000);
 
@@ -111,6 +111,37 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p><strong>Name:</strong> ${name}</p>
                 <p><strong>Contact:</strong> ${contact}</p>
                 <p><strong>Topic:</strong> ${topic}</p>
-                <p><strong>Track / MV:</strong> ${track}</p>
+                <p><strong>Track / Project:</strong> ${track}</p>
                 <p><strong>Message:</strong> ${msg}</p>
             `;
+
+            if (copyRefBtn) {
+                copyRefBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy Ref';
+            }
+            receiptModal.classList.remove("hidden");
+            contactForm.reset();
+        });
+    }
+
+    if (copyRefBtn) {
+        copyRefBtn.addEventListener("click", () => {
+            if (!latestRef) return;
+            navigator.clipboard?.writeText(latestRef).catch(() => {});
+            copyRefBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied';
+        });
+    }
+
+    if (closeReceiptBtn) {
+        closeReceiptBtn.addEventListener("click", () => {
+            receiptModal.classList.add("hidden");
+        });
+    }
+
+    if (receiptModal) {
+        receiptModal.addEventListener("click", (e) => {
+            if (e.target === receiptModal) {
+                receiptModal.classList.add("hidden");
+            }
+        });
+    }
+});
